@@ -15,7 +15,7 @@
       #{ if email_notification_params[:hours_to_deadline].to_i <= 0
             "You must return the book \"#{email_notification_params[:book]}\" authored by #{email_notification_params[:author]} as soon as possible!\n
       You already owe the library $#{sprintf('%.2f', email_notification_params[:penalty].to_f / 100.0)} (¢#{email_notification_params[:penalty]}) and you are charged ¢#{email_notification_params[:penalty_per_hour]} every hour.\n
-      Your overdue for the moment is #{-email_notification_params[:hours_to_deadline].to_i}."
+      Your overdue for the moment is #{-email_notification_params[:hours_to_deadline].to_i} hours."
          else 
             "You should return the book \"#{email_notification_params[:book]}\" authored by #{email_notification_params[:author]} in #{email_notification_params[:hours_to_deadline]} hours.\n
       Otherwise you will be charged ¢#{email_notification_params[:penalty_per_hour]} per hour."
